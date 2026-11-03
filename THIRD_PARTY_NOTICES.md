@@ -10,6 +10,6 @@ The MIT license in this repository covers the original OtoEvi source release. It
 | pycocoevalcap | Corpus BLEU, ROUGE-L and CIDEr | https://github.com/salaniz/pycocoevalcap |
 | NumPy / Pillow / safetensors | Numerical utilities, images, weight serialization | Their installed distributions |
 
-The DINOv3 model card identifies a separate **DINOv3 license**. Follow the upstream access and use conditions; its weights are not included in this repository. Source dataset images/captions retain their applicable distribution terms. No third-party baseline repositories, pretrained language models or clinical images have been copied into this release.
+The DINOv3 model card identifies a separate **DINOv3 license**. Follow the upstream access and use conditions; its weights are not included in this repository. Source dataset images/captions retain their applicable distribution terms. No third-party baseline repositories or pretrained language models have been copied into this release. The overview figure reproduces Figure 1 from the authors’ November 3, 2026 manuscript, including its illustrative otoendoscopic images; clinical image datasets and individual reports are not distributed.
 
 Repository organization references (not vendored implementations): [DINOv2](https://github.com/facebookresearch/dinov2), [MAE](https://github.com/facebookresearch/mae), [R2Gen](https://github.com/cuhksz-nlp/R2Gen). Their respective licenses govern their own code.

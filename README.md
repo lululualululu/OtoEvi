@@ -17,21 +17,13 @@ This is the authors' public implementation of **OtoEvi: Local Evidence-Guided Ot
 - Fixed configurations, public-dataset split reconstruction, corpus metrics and the frozen ten-concept Chinese reference-agreement evaluator.
 - Three-seed aggregate and per-seed results, implementation equivalence records and synthetic tests.
 
-**Data and weights:** the complete OtoInsight dataset and trained report-generation checkpoints are not distributed. Public-dataset images and source captions must be obtained separately. Generic DINOv3 weights are available from their upstream provider under its own terms. This release includes no clinical images or individual clinical reports. See [availability and dataset protocols](docs/data.md).
+**Data and weights:** the complete OtoInsight dataset and trained report-generation checkpoints are not distributed. Public-dataset images and source captions must be obtained separately. Generic DINOv3 weights are available from their upstream provider under its own terms. Apart from the illustrative images in the paper’s overview figure, this release does not distribute clinical images or individual clinical reports. See [availability and dataset protocols](docs/data.md).
 
 ## Method
 
-```mermaid
-flowchart LR
-    X["1–2 examination images"] --> V["Frozen DINOv3 ViT-S/16"]
-    V --> M["Multi-depth Visual Memory: 50 + 8 tokens"]
-    V --> S["View-specific slots: 12 per real view"]
-    M --> D["Five-layer causal decoder"]
-    S --> R["Sparse readers after layers 4 and 5"]
-    D --> R
-    R --> Y["Generated report"]
-    T["Training report clauses"] -. "CCL + gradient coordination" .-> S
-```
+![Figure 1. OtoEvi architecture from the November 3, 2026 manuscript](docs/assets/otoevi-overview.png)
+
+**Figure 1. OtoEvi overview.** The 58-token memory supplies every decoder layer. A separate path forms 12 local slots per real view; independent sparse readers update the outputs of layers four and five. Clause coverage and gradient coordination operate only during training. Backbone block numbers are one-based.
 
 | Paper component | Implementation | Key settings |
 |---|---|---|
