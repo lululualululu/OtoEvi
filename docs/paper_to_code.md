@@ -1,6 +1,6 @@
 # Paper-to-code correspondence
 
-Target: **OtoEvi: Local Evidence-Guided Otoendoscopic Report Generation**, November 3, 2026 reading copy. Its hash and the frozen research commit are recorded in [provenance](../results/provenance.json).
+Target: **OtoEvi: Local Evidence-Guided Otoendoscopic Report Generation**, November 3, 2026 manuscript. Its hash and the frozen research commit are recorded in [provenance](../results/provenance.json).
 
 | Manuscript | Public implementation | Correspondence |
 |---|---|---|
@@ -33,15 +33,3 @@ The final factorial scores include all eight configurations. The `no_gradient_co
 The paper experiments instantiated unused historical parameters. To preserve their exact random initialization of active parameters, `_initialization.py` reproduces the constructor's RNG draws. `compatibility.py` then deletes those inactive modules before training. No dynamic prefix, semantic anchor injection or anchor loss is executed or stored in a new checkpoint. The scalar `initialization_bank_size=384` remains only as the historical initialization-bank size; there is no need to mine a semantic dictionary.
 
 Historical D1 / H-series checkpoints are loaded by discarding only an explicit allowlist of retired keys, then applying `strict=True` to every remaining parameter. Other old variants are rejected. Optimizer state from the old full-storage layout is not automatically migrated; resume applies to checkpoints produced by this package.
-
-## Manuscript availability update
-
-The supplied PDF describes the old access-controlled repository, and S1.6 warns that its packaged CLI uses an earlier architecture. Those statements describe that archived repository; they no longer describe this public package. Suggested replacement:
-
-> The public implementation is available at https://github.com/lululualululu/OtoEvi under the MIT License. The packaged training, inference and evaluation entry points implement the final Multi-depth Visual Memory, View-preserving Sparse Reading and Clause Coverage Learning framework. The release includes fixed configurations, public-dataset split reconstruction, evaluation code and aggregate experiment records. The complete OtoInsight dataset and trained report-generation checkpoints are not distributed. The original experimental implementation is archived at research commit e4d0f8e.
-
-中文建议：
-
-> 最终实现公开于 https://github.com/lululualululu/OtoEvi，采用 MIT 许可证。打包的训练、推理和评估入口实现最终的多深度视觉记忆、保留视图的稀疏读取及子句覆盖学习框架。发布内容包括固定配置、公开数据集划分重建工具、评估代码及实验汇总记录。完整 OtoInsight 数据集和报告生成检查点不分发。原始实验实现归档于研究提交 e4d0f8e。
-
-No changes have been made to the supplied manuscript PDF. This repository does not assert publication or acceptance status.
