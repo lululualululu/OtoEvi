@@ -1,0 +1,15 @@
+{
+  "variant": "full",
+  "seed": 42,
+  "epochs": 15,
+  "batch_size": 32,
+  "effective_batch": 64,
+  "initialization_bank_size": 384,
+  "workers": 4,
+  "device": "cuda:0",
+  "vision_checkpoint": "weights/dinov3/model.safetensors",
+  "train": "data/otoinsight/train.json",
+  "val": "data/otoinsight/val.json",
+  "image_root": "data/otoinsight/images",
+  "output": "runs/otoinsight/full/seed42"
+}

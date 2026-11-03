@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "Please cite the OtoEvi manuscript when using this implementation."
+type: software
+title: "OtoEvi: Local Evidence-Guided Otoendoscopic Report Generation"
+authors:
+  - family-names: Xu
+    given-names: Nanbo
+  - family-names: Lu
+    given-names: Zhengyang
+  - family-names: Xu
+    given-names: Yanhong
+  - family-names: Mao
+    given-names: Jiayang
+  - family-names: Wu
+    given-names: Yunhan
+  - family-names: Li
+    given-names: Huan
+  - family-names: Liu
+    given-names: Min
+  - family-names: Shu
+    given-names: Can
+  - family-names: Zhou
+    given-names: Shengxiang
+  - family-names: Yang
+    given-names: Juping
+  - family-names: Li
+    given-names: Jun
+  - family-names: Liu
+    given-names: Qiurui
+version: 1.0.0
+date-released: 2026-11-03
+license: MIT
+repository-code: "https://github.com/lululualululu/OtoEvi"

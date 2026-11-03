@@ -1,0 +1,11 @@
+[
+  {
+    "report_id": "fictional-val-1",
+    "patient_id": "fictional-patient-2",
+    "filenames": [
+      "synthetic-2.png",
+      "synthetic-3.png"
+    ],
+    "caption": "右侧鼓膜完整。"
+  }
+]

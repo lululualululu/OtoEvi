@@ -1,0 +1,20 @@
+{
+  "otoinsight_hq_strict_temporal": {
+    "vocabulary_exact": true,
+    "training_batch32_tensors_exact": true,
+    "trained_checkpoint_predictions_exact": 8,
+    "clinical_metrics_exact": true
+  },
+  "iu_xray": {
+    "vocabulary_exact": true,
+    "training_batch32_tensors_exact": true,
+    "trained_checkpoint_predictions_exact": 8,
+    "clinical_metrics_exact": false
+  },
+  "peir_gross": {
+    "vocabulary_exact": true,
+    "training_batch32_tensors_exact": true,
+    "trained_checkpoint_predictions_exact": 8,
+    "clinical_metrics_exact": false
+  }
+}

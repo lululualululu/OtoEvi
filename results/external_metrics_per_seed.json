@@ -1,0 +1,1460 @@
+[
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.4181060119256316
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.2514776115203544
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.16903955785009642
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.12039490180555916
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.3232621671565338
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 0.30470759372018696
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.40551590480495836
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.23923154495050827
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.1579826192531565
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.11084835061764071
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3127178502886813
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.26392513142880186
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.17227454658992675
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.07872090774825485
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.04217244577414652
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.024772753977788744
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.20412767693374492
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.07997005229625492
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.4192942306737116
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.2561522240718468
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.17425441971027442
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.12607241206395514
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.3293362522330719
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 0.3216106750767927
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.4067114001255986
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.24432332227269554
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.16309234552361834
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.11590973650302155
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.31724498255746764
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.2697851923070513
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.3462380396867519
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.21496613141672513
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.13516783064991572
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.08442594872708549
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.3009485070008034
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.12339755857693488
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.41873074611951655
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.2533346349022955
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.17023184918270703
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.12180048915271494
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.32713922973216203
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 0.3055138459387758
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.40734877391930024
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.23929250850019962
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.15554539671104592
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.10817860148162296
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3170309273353383
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.24530944306718205
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.37820701038806265
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.21964403059829396
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.12843860817490652
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.08057108345120166
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.2911868798584931
+  },
+  {
+    "dataset": "iu_xray",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.12037552121008782
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5359642301710383
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.4631047132140132
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.4062624945695331
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.3596534052894536
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.532665341889245
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.0730695348640187
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5138160739479604
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.44295102616720183
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.3882857499846616
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.3436077915841348
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.5226963821700601
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.0146276128262763
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.3808320373250142
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.27586985295789596
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.20222368208150254
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.15849390792363569
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.38629068788043586
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.2199378639533392
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.3658983884402553
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.26415468929625613
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.1934172104064261
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.15150612320870216
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.37882761945433285
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.20981833619697116
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.13931428914154897
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.08874708960515001
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.041904117141730514
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.02479697220855408
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.2003017515723025
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.02118901565487901
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.12944835408925578
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.08224269679887801
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.038798419649526614
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.022948962442214713
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.19603308285139304
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 42,
+    "reference": "original",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.019318249925992455
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5334606813116501
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.4609694069169482
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.4049412002598822
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.3588525793543856
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.5385680479880893
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.0609605033841987
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5211478874737895
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.4492272552274754
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.3942894074262152
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.3492443200013945
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.5287058671465186
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.0111344913326978
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.3816618911174542
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.27646776820720775
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.20322713004565815
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.15908991244934548
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3925367050623295
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.23493812033102968
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.37362751657168614
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.26970490446834416
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.1980033192968974
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.15490186767157554
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3850212733559047
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.2256891444857715
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.04478337063856889
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.030352918517286342
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.015476349194843888
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.009985728122614045
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.23872313095969327
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.017136262998811456
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.03775596087129321
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.025589936343050488
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.013047799357196148
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.008418766941675569
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.23210180238251063
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 7,
+    "reference": "original",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.015701100138880188
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5336239502531871
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.4602687726924886
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.40450397279415756
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.3586283296783937
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.5375911302080737
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.116219783782768
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-1",
+    "value": 0.5171989892624066
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-2",
+    "value": 0.4451401439462685
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-3",
+    "value": 0.39092700725161406
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "bleu-4",
+    "value": 0.34646653527505133
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "rouge-L",
+    "value": 0.527446415443182
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "matched",
+    "metric": "cider",
+    "value": 1.0570297826982122
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.37938329380086033
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.2741653224810808
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.20054795092612496
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.15677906655246487
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3876136744502496
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.21569788779554727
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-1",
+    "value": 0.36841148098775495
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-2",
+    "value": 0.2654531266351057
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-3",
+    "value": 0.19396252389011417
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "bleu-4",
+    "value": 0.1515478605362095
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "rouge-L",
+    "value": 0.3804455026780834
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "shuffled",
+    "metric": "cider",
+    "value": 0.2080955116992444
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.18458652951361404
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.09075919783941724
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.030577786245898294
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.017495619483068072
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.31040108052182597
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "current",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.01810695155642883
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-1",
+    "value": 0.16817629362609152
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-2",
+    "value": 0.08269046254528889
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-3",
+    "value": 0.02785933931190128
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "bleu-4",
+    "value": 0.015940212143908436
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "rouge-L",
+    "value": 0.3021732304479638
+  },
+  {
+    "dataset": "peir_gross",
+    "variant": "full",
+    "seed": 3407,
+    "reference": "original",
+    "control": "blank",
+    "metric": "cider",
+    "value": 0.017764388353456215
+  }
+]

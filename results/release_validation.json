@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "unit_tests": 19,
+  "integration_tests": 6,
+  "aggregate_metrics_recomputed": 270,
+  "public_split_reconstruction": "exact for all three partitions of IU and PEIR",
+  "checkpoint_prediction_replay": {
+    "otoinsight_validation": 8,
+    "iu_xray_test": 8,
+    "peir_gross_revised_test": 8
+  },
+  "full_otoinsight_validation_clinical_metrics": "exact",
+  "package_build": [
+    "sdist",
+    "wheel"
+  ],
+  "lint": "passed",
+  "python": "3.8.19",
+  "torch": "2.3.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "scope": "Migration verification and synthetic end-to-end tests; not a fresh 15-epoch experimental rerun"
+}
