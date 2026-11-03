@@ -1,8 +1,8 @@
-"""Historical constructor order for seed-compatible initialization only.
+"""Fixed constructor order for reproducible seeded initialization.
 
-Temporary retired heads consume the original RNG draws, then are discarded by
-OtoEvi. They have no forward method, training objective, checkpoint storage or
-inference role in this release. See docs/reproducibility.md.
+Temporary heads consume RNG draws, then are discarded by OtoEvi. They have no
+forward method, training objective, checkpoint storage or inference role.
+See docs/paper_to_code.md for the initialization settings.
 """
 
 from __future__ import annotations

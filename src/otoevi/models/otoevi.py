@@ -128,10 +128,10 @@ class OtoEvi(_EvidenceGenerator):
         )
         self.fov_global_output = nn.Linear(512, 512, bias=False)
         nn.init.zeros_(self.fov_global_output.weight)
-        # Preserve seed-compatible construction, discard every retired parameter.
-        from .compatibility import discard_retired_modules
+        # Preserve the initialization RNG sequence, then remove temporary parameters.
+        from .compatibility import discard_initialization_modules
 
-        discard_retired_modules(self)
+        discard_initialization_modules(self)
         self.use_memory = self.use_reading = self.use_coverage = True
         self.coordinate_gradients = True
         self.captioner.use_memory = True

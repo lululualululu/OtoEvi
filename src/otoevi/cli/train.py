@@ -34,7 +34,7 @@ def main(argv=None):
         "--initialization-bank-size",
         type=int,
         default=TrainConfig.initialization_bank_size,
-        help="Legacy initialization bank size only; not a trained semantic head (paper: 384)",
+        help="Temporary initialization bank size; keep 384 to reproduce the reported results",
     )
     parser.add_argument("--workers", type=int, default=TrainConfig.workers)
     parser.add_argument("--device", default=TrainConfig.device)

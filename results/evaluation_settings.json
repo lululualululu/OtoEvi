@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    42,
+    7,
+    3407
+  ],
+  "selected_epoch": 15,
+  "partitions": {
+    "otoinsight": {
+      "split": "validation",
+      "reports": 1583
+    },
+    "iu_xray": {
+      "split": "test",
+      "reports": 383
+    },
+    "peir_gross": {
+      "split": "test",
+      "reports": 745,
+      "protocol": "study-specific split; history-reduced and original references scored separately"
+    }
+  },
+  "units": {
+    "BLEU": "0-1",
+    "ROUGE-L": "0-1",
+    "F1": "0-1",
+    "CIDEr": "unscaled"
+  },
+  "dispersion": "sample standard deviation across seeds"
+}

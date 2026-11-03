@@ -1,4 +1,4 @@
-"""Corpus caption scores, historical scores and clinical rule proxies."""
+"""Corpus caption scores and clinical concept reference-agreement measures."""
 
 import contextlib
 import io

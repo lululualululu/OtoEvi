@@ -1,6 +1,6 @@
-"""Explicit conversion of historical research checkpoints to the CCL package."""
+"""Remove initialization-only parameters and normalize checkpoint state dictionaries."""
 
-RETIRED_CAPTIONER = (
+INITIALIZATION_ONLY_CAPTIONER = (
     "scale_gate",
     "state_mixer",
     "tag_head",
@@ -16,21 +16,24 @@ RETIRED_CAPTIONER = (
     "anchor_gate",
     "tag_positive_weights",
 )
-RETIRED_MODEL = ("fov_global_projection", "fov_global_output")
+INITIALIZATION_ONLY_MODEL = ("fov_global_projection", "fov_global_output")
 
 
-def discard_retired_modules(model):
-    for name in RETIRED_CAPTIONER:
+def discard_initialization_modules(model):
+    for name in INITIALIZATION_ONLY_CAPTIONER:
         delattr(model.captioner, name)
-    for name in RETIRED_MODEL:
+    for name in INITIALIZATION_ONLY_MODEL:
         delattr(model, name)
 
 
 def active_state_dict(state):
-    """Drop only the explicitly enumerated inactive legacy parameters/buffers."""
-    prefixes = tuple("captioner." + name for name in RETIRED_CAPTIONER) + RETIRED_MODEL
+    """Drop only the explicitly enumerated inactive parameters/buffers."""
+    prefixes = (
+        tuple("captioner." + name for name in INITIALIZATION_ONLY_CAPTIONER)
+        + INITIALIZATION_ONLY_MODEL
+    )
 
-    def retired(key):
+    def inactive(key):
         return any(key == p or key.startswith(p + ".") for p in prefixes)
 
-    return {key: value for key, value in state.items() if not retired(key)}
+    return {key: value for key, value in state.items() if not inactive(key)}

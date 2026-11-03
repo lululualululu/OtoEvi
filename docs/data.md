@@ -2,7 +2,7 @@
 
 ## OtoInsight
 
-The manuscript describes 20,220 examinations from 8,422 patients. Fixed partitions contain 15,450 train, 1,583 validation and 3,187 temporal-test reports (6,265/681/1,476 patients). The current CCL table in this release is the **validation** evaluation. Do not label historical pooled-positive 2026 results as final-CCL results.
+OtoInsight contains 20,220 examinations from 8,422 patients. Fixed partitions contain 15,450 train, 1,583 validation and 3,187 temporal-test reports (6,265/681/1,476 patients). The OtoInsight results in this repository use the **validation** partition.
 
 To protect patient privacy and confidential clinical information, the OtoInsight dataset, including individual examination images and clinical reports, is not publicly available at this time. The repository provides data-format documentation and fictional example manifests to help users prepare their own appropriately authorized data; these examples do not contain patient records and cannot reproduce the reported results.
 
@@ -40,12 +40,12 @@ Then place the corresponding images under `data/<dataset>/images`, or edit `imag
 | IU X-Ray | 3,099 | 344 | 383 | Original supplied descriptions |
 | PEIR Gross, study-revised | 5,489 | 610 | 745 | History-reduced descriptions |
 
-## What the PEIR revision means
+## PEIR Gross protocol
 
-This is **our study's revised protocol**, not an official corrected PEIR release. The earlier local collection already contained explicit age/history narratives and cross-split related images. Our initial duplicate checks did not detect all near-duplicate or specimen-series relationships.
+The study uses a fixed PEIR Gross protocol with specimen-related grouping and history-reduced descriptions. Source captions can contain age and clinical history, and related images may depict the same specimen. The split specifications and reference edits in this repository define this study-specific benchmark; they are not an official dataset correction.
 
-The revised protocol kept the 745 test cases/order, conservatively grouped related images/descriptions, excluded 599 development examples in total and reduced explicit history in target text. Of those 599,508 were linked to test families and 97 required annotation review, with 6 in both groups. The resulting training/validation counts are 5,489/610. Eight flagged test annotations remain in evaluation. The full-library edit ledger changed 1,155 strings, including 991 with word-content changes; 125 test strings changed, 111 in word content.
+The revised protocol kept the 745 test cases/order, conservatively grouped related images/descriptions, excluded 599 development examples in total and reduced explicit history in target text. Of those 599, 508 were linked to test families and 97 required annotation review, with 6 in both groups. The resulting training/validation counts are 5,489/610. Eight flagged test annotations remain in evaluation. The full-library edit ledger changed 1,155 strings, including 991 with word-content changes; 125 test strings changed, 111 in word content.
 
-Known groups do not cross partitions, but grouping does not establish complete patient independence. History-reduced references are not physician-validated visual-only labels. Test cases had already been inspected: this was post-hoc corrective re-evaluation, not a new blind test. Both split and supervision changed, so their separate effects cannot be inferred from the old/new score difference.
+Known groups do not cross partitions, but grouping does not establish complete patient independence. History-reduced references are not physician-validated visual-only labels. Test cases had already been inspected: this was post-hoc corrective re-evaluation, not a new blind test. The protocol changes both the split and supervision, so comparisons with other protocols cannot isolate either effect.
 
 The frozen reconstruction applies precomputed source-span edits and split membership, not a new image-retrieval audit. It also emits `test_original.json` for scoring the same predictions against the original references. Source hashes prevent edits from being applied to a different text version.

@@ -1,4 +1,4 @@
-"""Load release checkpoints or explicitly supported historical D1 weights."""
+"""Load OtoEvi checkpoints and validate active model parameters."""
 
 from pathlib import Path
 
@@ -7,7 +7,7 @@ import torch
 from otoevi.models.ablations import VARIANTS, AblationOtoEvi
 from otoevi.models.compatibility import active_state_dict
 
-HISTORICAL = dict(
+CHECKPOINT_VARIANT_ALIASES = dict(
     zip(
         (
             "H000_base",
@@ -31,14 +31,14 @@ HISTORICAL = dict(
         ),
     )
 )
-HISTORICAL["D1_clause_coverage"] = "full"
+CHECKPOINT_VARIANT_ALIASES["D1_clause_coverage"] = "full"
 
 
 def checkpoint_variant(config, override=None):
     selected = override or config.get("variant", "full")
-    selected = HISTORICAL.get(selected, selected)
+    selected = CHECKPOINT_VARIANT_ALIASES.get(selected, selected)
     if selected not in VARIANTS:
-        raise ValueError("Not a supported final CCL checkpoint: " + selected)
+        raise ValueError("Unsupported OtoEvi checkpoint variant: " + selected)
     return selected
 
 

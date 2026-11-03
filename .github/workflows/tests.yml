@@ -4,6 +4,7 @@ permissions:
   contents: read
 jobs:
   unit:
+    # Keep Python 3.8 available for the pinned experiment dependencies.
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

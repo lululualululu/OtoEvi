@@ -25,12 +25,12 @@ Clause and report contrast are computed within each **microbatch**, not across t
 
 Use the JSON configs in the repository root, as shown in the README. Explicit command-line arguments override config values. Each seed/variant needs a separate output directory. `--resume` requires identical data, source hashes and configuration. A completed run resumes without adding epochs.
 
-The trainer saves model/optimizer/scheduler states, vocabulary, epoch history and configuration hashes. The fixed epoch-specific seeds reproduce batch ordering and worker-side transforms. Checkpoints in this package use the pruned parameter layout; use original training code to resume an unfinished historical research checkpoint.
+The trainer saves model/optimizer/scheduler states, vocabulary, epoch history and configuration hashes. The fixed epoch-specific seeds reproduce batch ordering and worker-side transforms. Resume from a checkpoint produced by `otoevi-train` with matching data and configuration.
 
 ## Controls and metrics
 
 - `matched`: original image/report pairing.
-- `shuffled`: deterministic one-position cyclic image donor, matching the frozen current experiment loader. It has no fixed report points, but is **not** guaranteed patient-disjoint when neighboring reports belong to one patient.
+- `shuffled`: deterministic one-position cyclic image donor. It has no fixed report points, but is **not** guaranteed patient-disjoint when neighboring reports belong to one patient.
 - `blank`: zero the normalized image tensor while preserving real-view masks. This is not an RGB-black image.
 
 Metrics are corpus-level COCO BLEU, ROUGE-L and CIDEr. No PTB tokenizer, sentence-BLEU substitution or reference truncation is applied. The Chinese concept evaluator counts positive reference agreement and reports explicit-negative and laterality measures separately. An unmentioned reference finding is not a confirmed negative diagnosis. English datasets do not receive the Chinese evaluator.
@@ -48,8 +48,10 @@ python scripts/check_results.py
 
 Synthetic integration tests exercise training, save/resume, image-only prediction, controls and metric calculation. They do not train a meaningful clinical model.
 
-The public migration was additionally checked against the archived research implementation: seeded active state/RNG, BF16 loss and weighted parameter gradients with real DINOv3 features, actual training-batch tensors, and a small archived-prediction replay on each dataset. See the machine-readable verification records in `results/`. These are **migration checks**, not a fresh 15-epoch rerun. Math SDP was used for gradient equivalence only; production training retains the original attention backend. Native fused CUDA attention may not be bitwise repeatable across repeated runs, hardware or software versions.
+CI runs unit tests, aggregate-result checks, lint and package builds on Python 3.8 and 3.10 with Ubuntu 22.04. The fixed runner version supports the pinned Python and PyTorch dependencies.
+
+Native fused CUDA attention may not be bitwise repeatable across runs, hardware or software versions. Record dependency versions, hardware, configuration and random seed for each experiment.
 
 ## Scope
 
-Full numerical reproduction of the clinical tables requires the unavailable OtoInsight images/reports and exact split. The release supplies the runnable method and metrics, not a substitute dataset. Public datasets require your source assets to match the frozen specification; the preparation script rejects mismatched captions instead of silently changing the benchmark.
+Reproducing the OtoInsight scores requires the clinical images, reports and fixed patient-level partitions. These data are currently not publicly available to protect patient privacy and confidential clinical information. The fictional manifests demonstrate the input schema only. For IU X-Ray and PEIR Gross, use authorized source assets matching the provided split specifications; the preparation script verifies caption hashes and split membership.

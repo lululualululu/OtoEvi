@@ -1,4 +1,4 @@
-"""Mechanism checks for the final CCL objective and public checkpoint naming."""
+"""Mechanism checks for the CCL objective and checkpoint naming."""
 
 import unittest
 

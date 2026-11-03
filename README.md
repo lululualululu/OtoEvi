@@ -8,14 +8,14 @@
 
 OtoEvi generates an examination-level report from one or two images. A frozen DINOv3 encoder supplies a compact multi-depth memory and separate view-specific local slots. The decoder reads those slots while generating text; **Clause Coverage Learning (CCL)** trains the same slots using distinct positive clauses from the paired report, without region annotations.
 
-This is the authors' public implementation of **OtoEvi: Local Evidence-Guided Otoendoscopic Report Generation**, aligned with the November 3, 2026 manuscript. The default `full` configuration is the final **memory + sparse reading + CCL** model. CCL was called `D1` in the research experiments. The eight visual evidence tokens denoted **C** in the memory equations are a different component.
+Official PyTorch implementation of **OtoEvi: Local Evidence-Guided Otoendoscopic Report Generation**. The default `full` configuration combines **multi-depth visual memory, view-preserving sparse reading and CCL**.
 
 ## What is included
 
 - Installable PyTorch package with training, image-only prediction and evaluation CLIs.
 - All eight memory / reading / CCL factorial configurations and a gradient-coordination control.
 - Fixed configurations, public-dataset split reconstruction, corpus metrics and the frozen ten-concept Chinese reference-agreement evaluator.
-- Three-seed aggregate and per-seed results, implementation equivalence records and synthetic tests.
+- Three-seed aggregate and per-seed results, unit tests and synthetic integration tests.
 
 **Data availability:** to protect patient privacy and confidential clinical information, the OtoInsight dataset, including individual examination images and clinical reports, is not publicly available at this time. The repository includes the illustrative images in the paper’s overview figure and fictional data-format examples. IU X-Ray and PEIR Gross images and source captions should be obtained from their original or authorized providers. See [availability and dataset protocols](docs/data.md).
 
@@ -23,7 +23,7 @@ This is the authors' public implementation of **OtoEvi: Local Evidence-Guided Ot
 
 ## Method
 
-![Figure 1. OtoEvi architecture from the November 3, 2026 manuscript](docs/assets/otoevi-overview.png)
+![Figure 1. OtoEvi architecture](docs/assets/otoevi-overview.png)
 
 **Figure 1. OtoEvi overview.** The 58-token memory supplies every decoder layer. A separate path forms 12 local slots per real view; independent sparse readers update the outputs of layers four and five. Clause coverage and gradient coordination operate only during training. Backbone block numbers are one-based.
 
@@ -34,7 +34,7 @@ This is the authors' public implementation of **OtoEvi: Local Evidence-Guided Ot
 | Clause Coverage Learning | [`training/alignment.py`](src/otoevi/training/alignment.py) | Equal weight per distinct positive clause; pooled reverse loss; temperature 0.07 |
 | Gradient coordination | [`training/gradients.py`](src/otoevi/training/gradients.py) | Per-examination conflict projection; auxiliary norm limit of 0.5× main norm |
 
-The objective is `L = Lgen + 0.05 Lreport + 0.015 Lclause`. Coverage deduplicates the forward positive average only; repeated allowed instances remain in the denominator and reverse objective. No semantic-anchor injection, dynamic text prefix, IDF-weighted coverage, or pretrained language decoder is active. The [equation map](docs/paper_to_code.md) documents the exact correspondence.
+The objective is `L = Lgen + 0.05 Lreport + 0.015 Lclause`. Coverage deduplicates the forward positive average only; repeated allowed instances remain in the denominator and reverse objective. The [equation map](docs/paper_to_code.md) documents the exact correspondence.
 
 ## Results
 
@@ -48,7 +48,7 @@ Mean ± **sample standard deviation** over seeds **42, 7, 3407**, using the fina
 
 On OtoInsight validation, concept Macro-F1 is **46.11 ± 1.66%** and Micro-F1 is **62.74 ± 0.65%**. These are fixed-rule agreement measures, not clinician-adjudicated accuracy. Adding CCL to memory + reading raises mean BLEU-4 from **66.45% to 66.76%**; effects in other factorial combinations are mixed. Full results, paired comparisons and limitations are described in [results/README.md](results/README.md).
 
-The current CCL result above is a **validation result**, not a 2026 temporal-test result. IU and PEIR models are trained separately on their respective training sets, not transferred zero-shot. PEIR uses our revised split and history-reduced references; its scores must not be compared directly with scores under other PEIR protocols.
+OtoInsight results use the validation partition. IU X-Ray and PEIR Gross models are trained and evaluated separately on each dataset. PEIR uses the study-specific split and history-reduced references described in the [data protocol](docs/data.md#peir-gross-protocol); comparisons require the same split and reference protocol.
 
 ## Installation
 
@@ -99,7 +99,8 @@ For the three seeds:
 
 ```bash
 for seed in 42 7 3407; do
-  otoevi-train --config configs/otoinsight.json --seed "$seed"     --output "runs/otoinsight/full/seed${seed}"
+  otoevi-train --config configs/otoinsight.json --seed "$seed" \
+    --output "runs/otoinsight/full/seed${seed}"
 done
 ```
 
@@ -112,11 +113,22 @@ Training uses 15 complete epochs, microbatch 32, effective batch 64, AdamW at 2e
 After training:
 
 ```bash
-otoevi-predict   --checkpoint runs/otoinsight/full/seed42/last_model.pt   --vision-checkpoint weights/dinov3/model.safetensors   --images data/otoinsight/images/example-view-1.png            data/otoinsight/images/example-view-2.png   --device cuda:0
+otoevi-predict \
+  --checkpoint runs/otoinsight/full/seed42/last_model.pt \
+  --vision-checkpoint weights/dinov3/model.safetensors \
+  --images data/otoinsight/images/example-view-1.png \
+           data/otoinsight/images/example-view-2.png \
+  --device cuda:0
 ```
 
 ```bash
-otoevi-evaluate   --checkpoint runs/otoinsight/full/seed42/last_model.pt   --vision-checkpoint weights/dinov3/model.safetensors   --manifest data/otoinsight/val.json --train data/otoinsight/train.json   --image-root data/otoinsight/images   --output runs/otoinsight/full/seed42/evaluation   --modes matched shuffled blank --device cuda:0
+otoevi-evaluate \
+  --checkpoint runs/otoinsight/full/seed42/last_model.pt \
+  --vision-checkpoint weights/dinov3/model.safetensors \
+  --manifest data/otoinsight/val.json --train data/otoinsight/train.json \
+  --image-root data/otoinsight/images \
+  --output runs/otoinsight/full/seed42/evaluation \
+  --modes matched shuffled blank --device cuda:0
 ```
 
 Evaluation saves complete per-report predictions locally and corpus BLEU-1/2/3/4, ROUGE-L and CIDEr. Chinese reports additionally receive concept, explicit-negative and laterality measures. Predictions are generated solely from images, view masks and fixed boundary tokens. The evaluator never passes reference reports or report IDs into the network.
@@ -124,7 +136,8 @@ Evaluation saves complete per-report predictions locally and corpus BLEU-1/2/3/4
 For a tiny synthetic end-to-end check with your DINOv3 weights:
 
 ```bash
-DINOV3_CHECKPOINT=weights/dinov3/model.safetensors   python -m unittest discover -s tests/integration -v
+DINOV3_CHECKPOINT=weights/dinov3/model.safetensors \
+  python -m unittest discover -s tests/integration -v
 ```
 
 This tests the pipeline, not clinical performance. Unit tests need no downloaded weights:
@@ -146,7 +159,7 @@ python -m unittest discover -s tests/unit -v
 | `reading_coverage` | | ✓ | ✓ |
 | `full` | ✓ | ✓ | ✓ |
 
-Without A, one projected global token replaces the full memory. CCL without B retains the original slot carrier **during training only**; it is absent from generation. `no_gradient_coordination` retains the full model and CCL but uses ordinary backpropagation; no new score for that control is claimed here. See [ablation definitions](docs/paper_to_code.md).
+Without A, one projected global token replaces the full memory. CCL without B retains the local slot carrier **during training only**; it is absent from generation. `no_gradient_coordination` retains the full model and CCL but uses ordinary backpropagation; results for this control are not included in the tables. See [ablation definitions](docs/paper_to_code.md).
 
 ## Repository layout
 
@@ -163,13 +176,13 @@ OtoEvi/
 ├── scripts/               # Public-data reconstruction and result checks
 ├── tests/                 # Unit and synthetic end-to-end tests
 ├── examples/              # Fictional manifest examples
-├── results/               # Aggregate/per-seed metrics and provenance
+├── results/               # Aggregate/per-seed metrics and evaluation settings
 └── docs/                  # Reproduction, data protocol and paper correspondence
 ```
 
 ## Citation
 
-The release corresponds to a manuscript; no acceptance status or DOI is asserted.
+If you use OtoEvi in your research, please cite:
 
 ```bibtex
 @misc{xu2026otoevi,
@@ -185,6 +198,6 @@ The release corresponds to a manuscript; no acceptance status or DOI is asserted
 
 ## License and acknowledgments
 
-Original OtoEvi code is released under the [MIT License](LICENSE). Dependencies, datasets and pretrained weights retain their own terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). We use PyTorch, timm/DINOv3 and the COCO caption evaluation tools. Repository organization draws on the clear model/config/evaluation separation in [DINOv2](https://github.com/facebookresearch/dinov2), the task-specific instructions in [MAE](https://github.com/facebookresearch/mae), and the dataset/run guidance in [R2Gen](https://github.com/cuhksz-nlp/R2Gen).
+Original OtoEvi code is released under the [MIT License](LICENSE). Dependencies, datasets and pretrained weights retain their own terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). We use PyTorch, timm/DINOv3 and the COCO caption evaluation tools.
 
 Please use GitHub Issues for reproducibility questions. Include the configuration, seed, dependency versions and a minimal synthetic example; do not post patient data.

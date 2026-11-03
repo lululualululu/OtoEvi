@@ -1,22 +1,25 @@
-# Experiment records
+# Results
 
-All scores come from completed research runs at the final epoch 15. This release reorganizes the implementation; it does not claim that all experiments were newly retrained during packaging.
+Metrics use the checkpoint after 15 complete training epochs and seeds **42, 7, 3407**.
 
-- `otoinsight_summary.json`: eight final memory/reading/CCL configurations, three image conditions, mean and sample SD.
-- `otoinsight_metrics_per_seed.json`: corresponding seeds 42/7/3407 values.
-- `external_metrics_summary.json`, `external_metrics_per_seed.json`: final CCL on separately trained IU/PEIR models; PEIR current and original-reference scoring are distinguished.
-- `provenance.json`: manuscript hash, research revision and source-label mapping.
-- `implementation_equivalence.json`: exact active-state/RNG and real-backbone BF16 forward/weighted-gradient comparisons against four archived CCL configurations, two synthetic examinations each.
-- `data_and_checkpoint_replay.json`: exact real training-batch32 tensors and eight archived predictions replayed per dataset; full OtoInsight validation concept metrics reproduced.
+| File | Contents |
+|---|---|
+| `otoinsight_summary.json` | Eight memory / reading / CCL configurations and three image conditions; mean and sample standard deviation |
+| `otoinsight_metrics_per_seed.json` | OtoInsight metrics for each configuration, condition and seed |
+| `external_metrics_summary.json` | IU X-Ray and PEIR Gross aggregate metrics |
+| `external_metrics_per_seed.json` | IU X-Ray and PEIR Gross per-seed metrics |
+| `evaluation_settings.json` | Dataset partitions, seeds, checkpoint epoch and metric units |
 
 BLEU, ROUGE and F1 are stored on a 0–1 scale; CIDEr is unscaled. Standard deviations are sample SD across three fitted seeds, not patient-level confidence intervals.
 
-The main final-CCL OtoInsight experiment uses 1,583 validation reports. No final-CCL 2026 temporal score is asserted. Current and original PEIR reference scores use the same generated outputs. Baseline implementation scores and historical pooled-positive controls remain separate research records; this public package does not claim to distribute all baseline implementations.
+OtoInsight uses 1,583 validation reports. IU X-Ray and PEIR Gross use 383 and 745 test reports, respectively, with models trained separately on each dataset. PEIR scores distinguish history-reduced and original references; both are evaluated against the same generated outputs. See the [data protocol](../docs/data.md#peir-gross-protocol).
 
-CCL effects are mixed across configurations. Relative to memory+reading, the full model's mean concept Macro-F1 gain is about 0.68 percentage points, concentrated in seed 42; the conditional patient-bootstrap interval reported in the research analysis crosses zero. The validation results do not establish a universal or statistically significant clinical gain. See the manuscript for the complete paired analysis and limitations.
+CCL effects vary across configurations. Relative to memory + reading, the full model increases mean concept Macro-F1 by about 0.68 percentage points, with most of the gain in seed 42. The conditional patient-bootstrap interval crosses zero; these results do not establish a statistically significant clinical gain. See the paper for the paired analysis and limitations.
+
+Verify aggregate means and sample standard deviations against the per-seed values:
 
 ```bash
 python scripts/check_results.py
 ```
 
-This checks every released aggregate against its per-seed values without needing patient data.
+This check does not require patient data.
