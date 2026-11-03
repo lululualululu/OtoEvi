@@ -17,7 +17,9 @@ This is the authors' public implementation of **OtoEvi: Local Evidence-Guided Ot
 - Fixed configurations, public-dataset split reconstruction, corpus metrics and the frozen ten-concept Chinese reference-agreement evaluator.
 - Three-seed aggregate and per-seed results, implementation equivalence records and synthetic tests.
 
-**Data and weights:** the complete OtoInsight dataset and trained report-generation checkpoints are not distributed. Public-dataset images and source captions must be obtained separately. Generic DINOv3 weights are available from their upstream provider under its own terms. Apart from the illustrative images in the paper’s overview figure, this release does not distribute clinical images or individual clinical reports. See [availability and dataset protocols](docs/data.md).
+**Data availability:** to protect patient privacy and confidential clinical information, the OtoInsight dataset, including individual examination images and clinical reports, is not publicly available at this time. The repository includes the illustrative images in the paper’s overview figure and fictional data-format examples. IU X-Ray and PEIR Gross images and source captions should be obtained from their original or authorized providers. See [availability and dataset protocols](docs/data.md).
+
+**Model weights:** trained report-generation checkpoints are not included in the current release. Generic DINOv3 weights are available from their upstream provider under its own terms.
 
 ## Method
 

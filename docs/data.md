@@ -4,7 +4,11 @@
 
 The manuscript describes 20,220 examinations from 8,422 patients. Fixed partitions contain 15,450 train, 1,583 validation and 3,187 temporal-test reports (6,265/681/1,476 patients). The current CCL table in this release is the **validation** evaluation. Do not label historical pooled-positive 2026 results as final-CCL results.
 
-The complete clinical dataset, its individual reports/images and trained task checkpoints are not distributed here. No public download URL or access-approval promise is supplied. The small example manifests are fictional schema examples, not data for reproducing the paper.
+To protect patient privacy and confidential clinical information, the OtoInsight dataset, including individual examination images and clinical reports, is not publicly available at this time. The repository provides data-format documentation and fictional example manifests to help users prepare their own appropriately authorized data; these examples do not contain patient records and cannot reproduce the reported results.
+
+为保护患者隐私及临床信息，OtoInsight 数据集（包括逐病例检查图像和临床报告）目前暂不公开。仓库提供数据格式说明和虚构的示例清单，便于使用者准备其已获适当授权的数据；这些示例不含真实患者记录，不能用于复现论文中的实验结果。
+
+Trained report-generation checkpoints are not included in the current release. / 本次发布暂不包含训练后的报告生成模型检查点。
 
 A manifest is a nonempty JSON list:
 
