@@ -4,7 +4,7 @@
 
 **Multi-depth Visual Memory · View-preserving Sparse Reading · Clause Coverage Learning**
 
-[简体中文](README.zh-CN.md) · [Installation & reproduction](docs/reproducibility.md) · [Data preparation](docs/data.md) · [Paper-to-code map](docs/paper_to_code.md) · [Results](results/README.md)
+[简体中文](README.zh-CN.md) · [Installation & reproduction](docs/reproducibility.md) · [Data preparation](docs/data.md) · [Paper-to-code map](docs/paper_to_code.md) · [Results](results/README.md) · [Computational cost](docs/computational_cost.md)
 
 OtoEvi generates an examination-level report from one or two images. A frozen DINOv3 encoder supplies a compact multi-depth memory and separate view-specific local slots. The decoder reads those slots while generating text; **Clause Coverage Learning (CCL)** trains the same slots using distinct positive clauses from the paired report, without region annotations.
 

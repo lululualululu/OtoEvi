@@ -8,6 +8,8 @@ Metrics use the checkpoint after 15 complete training epochs and seeds **42, 7, 
 | `otoinsight_metrics_per_seed.json` | OtoInsight metrics for each configuration, condition and seed |
 | `external_metrics_summary.json` | IU X-Ray and PEIR Gross aggregate metrics |
 | `external_metrics_per_seed.json` | IU X-Ray and PEIR Gross per-seed metrics |
+| `computational_cost/` | Full-model and same-backbone runtime measurements, raw repetition times, memory and parameter counts |
+| `peir_case_audit.json` | Source/reference trace and three-seed predictions for public PEIR image 00002071.jpg |
 | `evaluation_settings.json` | Dataset partitions, seeds, checkpoint epoch and metric units |
 
 BLEU, ROUGE and F1 are stored on a 0–1 scale; CIDEr is unscaled. Standard deviations are sample SD across three fitted seeds, not patient-level confidence intervals.
@@ -23,3 +25,5 @@ python scripts/check_results.py
 ```
 
 This check does not require patient data.
+
+The [computational cost protocol](../docs/computational_cost.md) defines the timing, memory and operator-count scope. `scripts/measure_cost.py` measures trained checkpoints with user-supplied data paths.

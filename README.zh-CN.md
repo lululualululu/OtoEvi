@@ -1,6 +1,6 @@
 # OtoEvi：局部证据引导的耳内镜报告生成
 
-[English](README.md) · [论文与代码对应](docs/paper_to_code.md) · [数据准备](docs/data.md) · [复现说明](docs/reproducibility.md)
+[English](README.md) · [论文与代码对应](docs/paper_to_code.md) · [数据准备](docs/data.md) · [复现说明](docs/reproducibility.md) · [运行成本](docs/computational_cost.md)
 
 OtoEvi 的官方 PyTorch 实现，结合**多深度视觉记忆、保留视图的稀疏读取和子句覆盖学习（CCL）**，从耳内镜图像生成检查级报告。
 

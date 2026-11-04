@@ -1,0 +1,37 @@
+{
+  "image": "00002071.jpg",
+  "source_url": "https://peir.path.uab.edu/library/picture.php?/2336",
+  "source_caption": "GROSS: CARDIOVASCULAR: HEART: Cocaine Abuse: Gross focal scars in myocardium woman in twenties sudden death",
+  "revised_reference": "GROSS: CARDIOVASCULAR: HEART: : Gross focal scars in myocardium",
+  "original_partition": "test",
+  "current_partition": "test",
+  "excluded_development_images": [
+    "00002072.jpg",
+    "00002073.jpg"
+  ],
+  "related_source_urls": [
+    "https://peir.path.uab.edu/library/picture.php?/2337",
+    "https://peir.path.uab.edu/library/picture.php?/2338"
+  ],
+  "current_predictions": {
+    "42": "gross : cardiovascular : heart : myocardial infarction , surgery",
+    "7": "gross : cardiovascular : heart : coronary atherosclerosis : gross close - up view of aorta with fibrosis and mural thrombus",
+    "3407": "gross : cardiovascular : heart : saphenous vein bypass graft thrombosis : gross natural color close - up of thrombosed fibrosis and thrombosed"
+  },
+  "replay": {
+    "seeds": [
+      42,
+      7,
+      3407
+    ],
+    "conditions": [
+      "matched",
+      "shuffled",
+      "blank"
+    ],
+    "batch_size": 32,
+    "verified_reports": 288,
+    "all_predictions_exact": true
+  },
+  "interpretation": "The age/death phrase is absent from current outputs, but the predictions still do not accurately describe the reference focal myocardial scars and introduce reference-unsupported diagnoses or procedures. This remains a failure case. Related captions do not verify patient or specimen identity. Reference edits are post-hoc and not physician-validated visual-only labels."
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "dataset": "otoinsight",
+    "seed": 42,
+    "epochs": 15,
+    "training_elapsed_seconds": 5971.542022705078,
+    "note": "Recorded training-loop wall time under the original concurrent experiment workload; excludes validation/checkpoint writing. Not a controlled dedicated-GPU benchmark."
+  },
+  {
+    "dataset": "iu_xray",
+    "seed": 42,
+    "epochs": 15,
+    "training_elapsed_seconds": 938.1450912952423,
+    "note": "Recorded training-loop wall time under the original concurrent experiment workload; excludes validation/checkpoint writing. Not a controlled dedicated-GPU benchmark."
+  },
+  {
+    "dataset": "peir_gross",
+    "seed": 42,
+    "epochs": 15,
+    "training_elapsed_seconds": 1166.8980638980865,
+    "note": "Recorded training-loop wall time under the original concurrent experiment workload; excludes validation/checkpoint writing. Not a controlled dedicated-GPU benchmark."
+  }
+]

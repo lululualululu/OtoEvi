@@ -37,6 +37,10 @@ Metrics are corpus-level COCO BLEU, ROUGE-L and CIDEr. No PTB tokenizer, sentenc
 
 For PEIR, rescoring **the same generated outputs** against `test_original.json` isolates reference choice at evaluation; it is not a second generation experiment. Use `scripts/score_predictions.py` with `--references`.
 
+## Computational cost
+
+See [computational cost](computational_cost.md) for measured inference/training costs, the RTX 4090 protocol, and the checkpoint benchmark command.
+
 ## Tests
 
 ```bash

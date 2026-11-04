@@ -49,3 +49,11 @@ The revised protocol kept the 745 test cases/order, conservatively grouped relat
 Known groups do not cross partitions, but grouping does not establish complete patient independence. History-reduced references are not physician-validated visual-only labels. Test cases had already been inspected: this was post-hoc corrective re-evaluation, not a new blind test. The protocol changes both the split and supervision, so comparisons with other protocols cannot isolate either effect.
 
 The frozen reconstruction applies precomputed source-span edits and split membership, not a new image-retrieval audit. It also emits `test_original.json` for scoring the same predictions against the original references. Source hashes prevent edits from being applied to a different text version.
+
+### Source trace for PEIR image 00002071.jpg
+
+The [official UAB record, image ID 2336](https://peir.path.uab.edu/library/picture.php?/2336) contains the clinical-history phrases “Cocaine Abuse” and “woman in twenties sudden death,” alongside focal myocardial scars. These phrases originate in the source caption; reproducing them does not establish image-based recognition of that history.
+
+Images 00002072.jpg and 00002073.jpg, [official IDs 2337](https://peir.path.uab.edu/library/picture.php?/2337) and [2338](https://peir.path.uab.edu/library/picture.php?/2338), share the same full caption and were in the original training partition. Both are excluded from the study's training/validation partitions. The target 00002071.jpg remains in the test partition; its history-reduced reference retains focal myocardial scars, and its original reference is preserved for separate scoring. Shared captions and image similarity do not verify patient or specimen identity.
+
+The [case audit](../results/peir_case_audit.json) lists the current matched-image predictions for all three seeds. The age/death phrase is absent, but the outputs still fail to accurately describe the reference lesion and introduce reference-unsupported diagnoses or procedures. This remains a failure case. Replaying the three seeds under matched/shuffled/blank conditions reproduced all 288 saved outputs in the nine corresponding batches. This verifies reproduction of those outputs; the post-hoc reference edits do not constitute new blind-test evidence.
