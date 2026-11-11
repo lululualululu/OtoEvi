@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OtoEvi · 实验复现流程</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f3f6f3;
+      --surface: #ffffff;
+      --ink: #182721;
+      --muted: #486057;
+      --accent: #14654b;
+      --line: #cfddd4;
+      font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #13221d;
+        --surface: #1b2d26;
+        --ink: #edf8f1;
+        --muted: #b5cbbf;
+        --accent: #8adbb8;
+        --line: #3e5c4f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); }
+    main { max-width: 58rem; padding: clamp(1.25rem, 5vw, 4rem); margin-inline: auto; }
+    header { border-block-end: 2px solid var(--accent); padding-block-end: 1.3rem; }
+    h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.2; }
+    h2 { margin: 0; font-size: 1.13rem; }
+    p { margin: .45rem 0 0; }
+    a { color: var(--accent); text-underline-offset: .2em; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .intro, .note { color: var(--muted); }
+    .steps { display: grid; gap: .8rem; padding-inline-start: 1.75rem; }
+    .steps > li {
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: .65rem;
+      background: var(--surface);
+    }
+    .steps > li::marker { color: var(--accent); font-weight: 700; }
+    code { font-family: "SFMono-Regular", Consolas, monospace; font-size: .92em; }
+    pre { margin-block: .65rem 0; overflow-x: auto; }
+    footer { border-block-start: 1px solid var(--line); padding-block-start: 1rem; }
+    footer ul { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; padding: 0; margin: 0; list-style: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>OtoEvi 实验复现流程</h1>
+      <p class="intro">从准备耳内镜数据到生成检查报告，再用固定数据划分和评价协议核对结果。</p>
+    </header>
+
+    <ol class="steps">
+      <li>
+        <h2>准备环境和权重</h2>
+        <p>按仓库指南安装 PyTorch 与项目依赖，准备 timm 格式的 DINOv3 ViT-S/16 权重，运行单元测试检查环境。</p>
+        <pre><code>python -m unittest discover -s tests/unit -v</code></pre>
+      </li>
+      <li>
+        <h2>准备数据和划分</h2>
+        <p>每次检查关联一至两张真实视图。OtoInsight 的临床数据尚未公开。复现 IU X-Ray 或 PEIR Gross 时，从授权来源取得数据，并沿用仓库规定的划分和参考文本。</p>
+      </li>
+      <li>
+        <h2>训练并保存检查点</h2>
+        <p>选择对应数据集的配置，分别运行种子 <code>42</code>、<code>7</code> 和 <code>3407</code>。冻结的 DINOv3 提取多层特征，解码器结合视觉记忆与视图局部证据生成报告。条款覆盖学习（CCL）在训练阶段对齐报告条款与证据槽。使用第 15 个完整轮次保存的最终检查点。</p>
+      </li>
+      <li>
+        <h2>仅用图像生成报告</h2>
+        <p>用 <code>otoevi-predict</code> 加载检查点和真实视图。生成阶段仅使用图像、视图掩码和固定边界标记。</p>
+      </li>
+      <li>
+        <h2>评估与核对</h2>
+        <p>用 <code>otoevi-evaluate</code> 对照匹配、错配和空白视图三种条件，汇总语料级 BLEU、ROUGE-L 和 CIDEr。中文报告另核对概念一致性、明确否定及侧别。记录数据划分、配置、种子和运行环境。</p>
+        <p class="note">核对仓库已发布的汇总结果时，可运行 <code>python scripts/check_results.py</code>。</p>
+      </li>
+    </ol>
+
+    <footer>
+      <ul aria-label="仓库文档">
+        <li><a href="https://github.com/lululualululu/OtoEvi/blob/6224307e0c58bcc975a5fd359336c7446a629e9b/docs/reproducibility.md">复现指南</a></li>
+        <li><a href="https://github.com/lululualululu/OtoEvi/blob/6224307e0c58bcc975a5fd359336c7446a629e9b/docs/data.md">数据协议</a></li>
+        <li><a href="https://github.com/lululualululu/OtoEvi/blob/6224307e0c58bcc975a5fd359336c7446a629e9b/docs/paper_to_code.md">论文与代码对应</a></li>
+        <li><a href="https://github.com/lululualululu/OtoEvi/blob/6224307e0c58bcc975a5fd359336c7446a629e9b/results/README.md">结果说明</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
